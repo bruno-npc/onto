@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/bruno/ontologies/2021/2/OntoJuris"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/bruno/ontologies/2021/2/OntoJuris">
+    <Prefix name="" IRI="http://www.semanticweb.org/bruno/ontologies/2021/2/OntoJuris"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal xml:lang="pt">Esta ontologia tem como objetivo distinguir as ações que se aplicam em determinadas leis.</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#Calúnia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ContravençõesPenais"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Difamação"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DivulgaçãoDeFatosInverídicos"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Executor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Injúria"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LegislaçãoVigente"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Lei"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LeisAplicáveis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LeisNãoAplicáveis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Penalidade"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Acusação"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Ação"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Penalidade"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ação_penal"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Difamação"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Jornal_inverso"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Calúnia"/>
+        <Class IRI="#LeisAplicáveis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ContravençõesPenais"/>
+        <Class IRI="#LeisAplicáveis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Difamação"/>
+        <Class IRI="#LeisAplicáveis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DivulgaçãoDeFatosInverídicos"/>
+        <Class IRI="#LeisAplicáveis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Executor"/>
+        <Class IRI="#Lei"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Injúria"/>
+        <Class IRI="#LeisAplicáveis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LeisAplicáveis"/>
+        <Class IRI="#LegislaçãoVigente"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LeisNãoAplicáveis"/>
+        <Class IRI="#LegislaçãoVigente"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Penalidade"/>
+        <Class IRI="#Lei"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#LeisAplicáveis"/>
+        <Class IRI="#LeisNãoAplicáveis"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Penalidade"/>
+        <NamedIndividual IRI="#Ação_penal"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Difamação"/>
+        <NamedIndividual IRI="#Difamação"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Executor"/>
+        <NamedIndividual IRI="#Jornal_inverso"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Penalidade"/>
+        <NamedIndividual IRI="#Ação_penal"/>
+        <NamedIndividual IRI="#Jornal_inverso"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Ação"/>
+        <NamedIndividual IRI="#Difamação"/>
+        <NamedIndividual IRI="#Ação_penal"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Acusação"/>
+        <NamedIndividual IRI="#Jornal_inverso"/>
+        <NamedIndividual IRI="#Difamação"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Acusação"/>
+        <Class IRI="#Executor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Ação"/>
+        <Class IRI="#Penalidade"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Penalidade"/>
+        <Class IRI="#LeisAplicáveis"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Acusação"/>
+        <Class IRI="#LeisAplicáveis"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Ação"/>
+        <Class IRI="#LeisAplicáveis"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Penalidade"/>
+        <Class IRI="#Executor"/>
+    </ObjectPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

@@ -1,0 +1,273 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/bruno/ontologies/2021/2/untitled-ontology-8"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/bruno/ontologies/2021/2/untitled-ontology-8">
+    <Prefix name="" IRI="http://www.semanticweb.org/bruno/ontologies/2021/2/untitled-ontology-8"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Administração"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Escola"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Estudante"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Funcionário"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fundamental"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Manutenção"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Matéria"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Médio"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Não_Professor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Particular"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Professor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pública"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Serviço_de_limpeza"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Aprende"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Emprega"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Ensina"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Matrícula"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Estudante"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Funcionário"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Ingressou"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Professor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Bruno"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cinthia"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EscolaPresencial"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#P.Ana"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#P.Maria"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#P.Rafael"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Administração"/>
+        <Class IRI="#Manutenção"/>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Administração"/>
+        <Class IRI="#Não_Professor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fundamental"/>
+        <Class IRI="#Estudante"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Manutenção"/>
+        <Class IRI="#Não_Professor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Médio"/>
+        <Class IRI="#Estudante"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Não_Professor"/>
+        <Class IRI="#Funcionário"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Particular"/>
+        <Class IRI="#Escola"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Professor"/>
+        <Class IRI="#Funcionário"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pública"/>
+        <Class IRI="#Escola"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Serviço_de_limpeza"/>
+        <Class IRI="#Não_Professor"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Fundamental"/>
+        <Class IRI="#Médio"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Estudante"/>
+        <NamedIndividual IRI="#Bruno"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Escola"/>
+        <NamedIndividual IRI="#EscolaPresencial"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Professor"/>
+        <NamedIndividual IRI="#P.Rafael"/>
+    </ClassAssertion>
+    <SameIndividual>
+        <NamedIndividual IRI="#Bruno"/>
+        <NamedIndividual IRI="#Cinthia"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#P.Ana"/>
+        <NamedIndividual IRI="#P.Rafael"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#P.Maria"/>
+        <NamedIndividual IRI="#P.Rafael"/>
+    </SameIndividual>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Emprega"/>
+        <NamedIndividual IRI="#EscolaPresencial"/>
+        <NamedIndividual IRI="#P.Rafael"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Matrícula"/>
+        <NamedIndividual IRI="#EscolaPresencial"/>
+        <NamedIndividual IRI="#Bruno"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Ensina"/>
+        <NamedIndividual IRI="#P.Rafael"/>
+        <NamedIndividual IRI="#Bruno"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Estudante"/>
+        <NamedIndividual IRI="#Bruno"/>
+        <Literal>01</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ingressou"/>
+        <NamedIndividual IRI="#Bruno"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-01T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Professor"/>
+        <NamedIndividual IRI="#P.Ana"/>
+        <Literal>Geografia</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Professor"/>
+        <NamedIndividual IRI="#P.Maria"/>
+        <Literal>Matemática</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Professor"/>
+        <NamedIndividual IRI="#P.Rafael"/>
+        <Literal>Ciência</Literal>
+    </DataPropertyAssertion>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Aprende"/>
+        <Class IRI="#Estudante"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Emprega"/>
+        <Class IRI="#Escola"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Ensina"/>
+        <Class IRI="#Professor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Matrícula"/>
+        <Class IRI="#Escola"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Aprende"/>
+        <Class IRI="#Matéria"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Emprega"/>
+        <Class IRI="#Funcionário"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Ensina"/>
+        <Class IRI="#Matéria"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Matrícula"/>
+        <Class IRI="#Estudante"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Estudante"/>
+        <Class IRI="#Estudante"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Funcionário"/>
+        <Class IRI="#Funcionário"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Ingressou"/>
+        <Class IRI="#Estudante"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Professor"/>
+        <Class IRI="#Professor"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#Estudante"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Funcionário"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Ingressou"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Professor"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

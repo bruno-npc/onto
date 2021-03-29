@@ -1,0 +1,234 @@
+Prefix(:=<http://www.semanticweb.org/bruno/ontologies/2021/2/OntoFake#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://www.semanticweb.org/bruno/ontologies/2021/2/OntoFake>
+Annotation(rdfs:comment "Esta ontologia tem como objetivo distinguir informações entre verdadeiras ou falsas, caracterizando-as em áreas que atuam."@pt)
+
+Declaration(Class(:Autor))
+Declaration(Class(:AutorCredibilizado))
+Declaration(Class(:Boatos))
+Declaration(Class(:Caluniar))
+Declaration(Class(:Capcioso))
+Declaration(Class(:ClickBait))
+Declaration(Class(:Data))
+Declaration(Class(:DataPublicaçãoReal))
+Declaration(Class(:Demagogia))
+Declaration(Class(:Descontextualizar))
+Declaration(Class(:FENAJ))
+Declaration(Class(:FIJ))
+Declaration(Class(:Fake))
+Declaration(Class(:Falsidade))
+Declaration(Class(:Fato))
+Declaration(Class(:Informação))
+Declaration(Class(:LesãoÀFéPública))
+Declaration(Class(:MidiáticaEnganosa))
+Declaration(Class(:Noticias))
+Declaration(Class(:Parórias))
+Declaration(Class(:Portal))
+Declaration(Class(:PortalComunicadorCredibilizado))
+Declaration(Class(:TeoriasNãoCientíficas))
+Declaration(Class(:Título))
+Declaration(Class(:TítuloReal))
+Declaration(ObjectProperty(:Autor))
+Declaration(ObjectProperty(:Data))
+Declaration(ObjectProperty(:Divulgador))
+Declaration(ObjectProperty(:Fake))
+Declaration(ObjectProperty(:Fato))
+Declaration(ObjectProperty(:Portal))
+Declaration(ObjectProperty(:Título))
+Declaration(NamedIndividual(:G1))
+Declaration(NamedIndividual(:Informação))
+Declaration(NamedIndividual(:InformaçãoFalsa))
+Declaration(NamedIndividual(:PortalDuvidoso))
+Declaration(NamedIndividual(:TesteValidaçõesFalsas))
+
+############################
+#   Object Properties
+############################
+
+# Object Property: :Autor (:Autor)
+
+SubObjectPropertyOf(:Autor :Divulgador)
+ObjectPropertyDomain(:Autor :Informação)
+ObjectPropertyRange(:Autor :Autor)
+
+# Object Property: :Data (:Data)
+
+SubObjectPropertyOf(:Data :Divulgador)
+ObjectPropertyDomain(:Data :Informação)
+ObjectPropertyRange(:Data :Data)
+
+# Object Property: :Divulgador (:Divulgador)
+
+ObjectPropertyDomain(:Divulgador :Informação)
+ObjectPropertyRange(:Divulgador :Noticias)
+
+# Object Property: :Fake (:Fake)
+
+InverseObjectProperties(:Fake :Fato)
+ObjectPropertyDomain(:Fake :Fake)
+ObjectPropertyRange(:Fake :Boatos)
+ObjectPropertyRange(:Fake :Caluniar)
+ObjectPropertyRange(:Fake :Capcioso)
+ObjectPropertyRange(:Fake :LesãoÀFéPública)
+ObjectPropertyRange(:Fake :MidiáticaEnganosa)
+ObjectPropertyRange(:Fake :Parórias)
+ObjectPropertyRange(:Fake :TeoriasNãoCientíficas)
+
+# Object Property: :Fato (:Fato)
+
+ObjectPropertyDomain(:Fato :Fato)
+ObjectPropertyRange(:Fato :AutorCredibilizado)
+ObjectPropertyRange(:Fato :DataPublicaçãoReal)
+ObjectPropertyRange(:Fato :PortalComunicadorCredibilizado)
+ObjectPropertyRange(:Fato :TítuloReal)
+
+# Object Property: :Portal (:Portal)
+
+SubObjectPropertyOf(:Portal :Divulgador)
+ObjectPropertyDomain(:Portal :Informação)
+ObjectPropertyRange(:Portal :Portal)
+
+# Object Property: :Título (:Título)
+
+SubObjectPropertyOf(:Título :Divulgador)
+ObjectPropertyDomain(:Título :Informação)
+ObjectPropertyRange(:Título :Título)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: :Autor (:Autor)
+
+SubClassOf(:Autor :Informação)
+
+# Class: :AutorCredibilizado (:AutorCredibilizado)
+
+SubClassOf(:AutorCredibilizado :Fato)
+
+# Class: :Boatos (:Boatos)
+
+SubClassOf(:Boatos :Descontextualizar)
+
+# Class: :Caluniar (:Caluniar)
+
+SubClassOf(:Caluniar :Descontextualizar)
+
+# Class: :Capcioso (:Capcioso)
+
+SubClassOf(:Capcioso :Demagogia)
+
+# Class: :ClickBait (:ClickBait)
+
+SubClassOf(:ClickBait :Falsidade)
+
+# Class: :Data (:Data)
+
+SubClassOf(:Data :Informação)
+
+# Class: :DataPublicaçãoReal (:DataPublicaçãoReal)
+
+SubClassOf(:DataPublicaçãoReal :Fato)
+
+# Class: :Demagogia (:Demagogia)
+
+SubClassOf(:Demagogia :Fake)
+
+# Class: :Descontextualizar (:Descontextualizar)
+
+SubClassOf(:Descontextualizar :Fake)
+
+# Class: :FENAJ (:FENAJ)
+
+AnnotationAssertion(rdfs:comment :FENAJ "Federação Nacional dos Jornalistas")
+SubClassOf(:FENAJ :AutorCredibilizado)
+
+# Class: :FIJ (:FIJ)
+
+AnnotationAssertion(rdfs:comment :FIJ "Federação Internacional dos Jornalistas")
+SubClassOf(:FIJ :AutorCredibilizado)
+
+# Class: :Fake (:Fake)
+
+SubClassOf(:Fake :Noticias)
+DisjointClasses(:Fake :Fato)
+
+# Class: :Falsidade (:Falsidade)
+
+SubClassOf(:Falsidade :Fake)
+
+# Class: :Fato (:Fato)
+
+SubClassOf(:Fato :Noticias)
+
+# Class: :LesãoÀFéPública (:LesãoÀFéPública)
+
+SubClassOf(:LesãoÀFéPública :Demagogia)
+
+# Class: :MidiáticaEnganosa (:MidiáticaEnganosa)
+
+SubClassOf(:MidiáticaEnganosa :Falsidade)
+
+# Class: :Parórias (:Parórias)
+
+SubClassOf(:Parórias :Descontextualizar)
+
+# Class: :Portal (:Portal)
+
+SubClassOf(:Portal :Informação)
+
+# Class: :PortalComunicadorCredibilizado (:PortalComunicadorCredibilizado)
+
+SubClassOf(:PortalComunicadorCredibilizado :Fato)
+
+# Class: :TeoriasNãoCientíficas (:TeoriasNãoCientíficas)
+
+SubClassOf(:TeoriasNãoCientíficas :Falsidade)
+
+# Class: :Título (:Título)
+
+SubClassOf(:Título :Informação)
+
+# Class: :TítuloReal (:TítuloReal)
+
+SubClassOf(:TítuloReal :Fato)
+
+
+############################
+#   Named Individuals
+############################
+
+# Individual: :G1 (:G1)
+
+ClassAssertion(:PortalComunicadorCredibilizado :G1)
+ObjectPropertyAssertion(:Portal :G1 :Informação)
+
+# Individual: :Informação (:Informação)
+
+ClassAssertion(:Fato :Informação)
+
+# Individual: :InformaçãoFalsa (:InformaçãoFalsa)
+
+ClassAssertion(:Fake :InformaçãoFalsa)
+
+# Individual: :PortalDuvidoso (:PortalDuvidoso)
+
+ClassAssertion(:MidiáticaEnganosa :PortalDuvidoso)
+ObjectPropertyAssertion(:Portal :PortalDuvidoso :InformaçãoFalsa)
+
+# Individual: :TesteValidaçõesFalsas (:TesteValidaçõesFalsas)
+
+ClassAssertion(:MidiáticaEnganosa :TesteValidaçõesFalsas)
+ClassAssertion(:Parórias :TesteValidaçõesFalsas)
+ObjectPropertyAssertion(:Portal :TesteValidaçõesFalsas :InformaçãoFalsa)
+
+
+)
