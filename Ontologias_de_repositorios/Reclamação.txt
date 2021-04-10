@@ -1,0 +1,1 @@
+Para representar os principais constituintes comumente encontrados em reclamações em vários domínios.

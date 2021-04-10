@@ -31,6 +31,9 @@
         <Class IRI="#Manutenção"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Matemática"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Matéria"/>
     </Declaration>
     <Declaration>
@@ -64,6 +67,9 @@
         <ObjectProperty IRI="#Matrícula"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#Tem_Aluno"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#Estudante"/>
     </Declaration>
     <Declaration>
@@ -83,6 +89,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#EscolaPresencial"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Matematica"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#P.Ana"/>
@@ -108,6 +117,10 @@
     <SubClassOf>
         <Class IRI="#Manutenção"/>
         <Class IRI="#Não_Professor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Matemática"/>
+        <Class IRI="#Matéria"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Médio"/>
@@ -146,6 +159,10 @@
         <NamedIndividual IRI="#EscolaPresencial"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Matemática"/>
+        <NamedIndividual IRI="#Matematica"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Professor"/>
         <NamedIndividual IRI="#P.Rafael"/>
     </ClassAssertion>
@@ -162,6 +179,11 @@
         <NamedIndividual IRI="#P.Rafael"/>
     </SameIndividual>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Aprende"/>
+        <NamedIndividual IRI="#Bruno"/>
+        <NamedIndividual IRI="#Matematica"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#Emprega"/>
         <NamedIndividual IRI="#EscolaPresencial"/>
         <NamedIndividual IRI="#P.Rafael"/>
@@ -172,7 +194,7 @@
         <NamedIndividual IRI="#Bruno"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#Ensina"/>
+        <ObjectProperty IRI="#Tem_Aluno"/>
         <NamedIndividual IRI="#P.Rafael"/>
         <NamedIndividual IRI="#Bruno"/>
     </ObjectPropertyAssertion>
@@ -217,6 +239,10 @@
         <ObjectProperty IRI="#Matrícula"/>
         <Class IRI="#Escola"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Tem_Aluno"/>
+        <Class IRI="#Professor"/>
+    </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#Aprende"/>
         <Class IRI="#Matéria"/>
@@ -231,6 +257,10 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#Matrícula"/>
+        <Class IRI="#Estudante"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Tem_Aluno"/>
         <Class IRI="#Estudante"/>
     </ObjectPropertyRange>
     <DataPropertyDomain>

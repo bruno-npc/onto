@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="http://www.semanticweb.org/bruno/ontologies/2021/2/OntoJuris"
+     xml:base="http://www.semanticweb.org/bruno/ontologies/2021/3/OntoJuris"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="http://www.semanticweb.org/bruno/ontologies/2021/2/OntoJuris">
-    <Prefix name="" IRI="http://www.semanticweb.org/bruno/ontologies/2021/2/OntoJuris"/>
+     ontologyIRI="http://www.semanticweb.org/bruno/ontologies/2021/3/OntoJuris">
+    <Prefix name="" IRI="http://www.semanticweb.org/bruno/ontologies/2021/3/OntoJuris"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -26,7 +26,7 @@
         <Class IRI="#Difamação"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#DivulgaçãoDeFatosInverídicos"/>
+        <Class IRI="#DivulgaçõesFalsas"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Executor"/>
@@ -35,10 +35,13 @@
         <Class IRI="#Injúria"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#LegislaçãoVigente"/>
+        <Class IRI="#Integrantes"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Lei"/>
+        <Class IRI="#Julgador"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LegislaçãoVigente"/>
     </Declaration>
     <Declaration>
         <Class IRI="#LeisAplicáveis"/>
@@ -47,25 +50,46 @@
         <Class IRI="#LeisNãoAplicáveis"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Penalidade"/>
+        <Class IRI="#Vítima"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#Acusação"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#Ação"/>
+        <ObjectProperty IRI="#Afetado"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#Penalidade"/>
+        <ObjectProperty IRI="#Lei_Contra"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Ação_penal"/>
+        <ObjectProperty IRI="#Utiliza_Lei"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Artigo"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Penalidade"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Vigência"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AçãoPenal"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Difamação"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Jornal_inverso"/>
+        <NamedIndividual IRI="#JornalFake"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#JornalReal"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NovaAçãoPenalContraNovoJornalFake"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NovoJornalFake"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#Calúnia"/>
@@ -80,18 +104,26 @@
         <Class IRI="#LeisAplicáveis"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#DivulgaçãoDeFatosInverídicos"/>
+        <Class IRI="#DivulgaçõesFalsas"/>
         <Class IRI="#LeisAplicáveis"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Executor"/>
-        <Class IRI="#Lei"/>
+        <Class IRI="#Integrantes"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Injúria"/>
         <Class IRI="#LeisAplicáveis"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Julgador"/>
+        <Class IRI="#Integrantes"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LegislaçãoVigente"/>
+        <Class IRI="#Integrantes"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#LeisAplicáveis"/>
         <Class IRI="#LegislaçãoVigente"/>
     </SubClassOf>
@@ -100,16 +132,12 @@
         <Class IRI="#LegislaçãoVigente"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Penalidade"/>
-        <Class IRI="#Lei"/>
+        <Class IRI="#Vítima"/>
+        <Class IRI="#Integrantes"/>
     </SubClassOf>
-    <DisjointClasses>
-        <Class IRI="#LeisAplicáveis"/>
-        <Class IRI="#LeisNãoAplicáveis"/>
-    </DisjointClasses>
     <ClassAssertion>
-        <Class IRI="#Penalidade"/>
-        <NamedIndividual IRI="#Ação_penal"/>
+        <Class IRI="#Julgador"/>
+        <NamedIndividual IRI="#AçãoPenal"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Difamação"/>
@@ -117,46 +145,120 @@
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Executor"/>
-        <NamedIndividual IRI="#Jornal_inverso"/>
+        <NamedIndividual IRI="#JornalFake"/>
     </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Vítima"/>
+        <NamedIndividual IRI="#JornalReal"/>
+    </ClassAssertion>
+    <SameIndividual>
+        <NamedIndividual IRI="#AçãoPenal"/>
+        <NamedIndividual IRI="#NovaAçãoPenalContraNovoJornalFake"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#JornalFake"/>
+        <NamedIndividual IRI="#NovoJornalFake"/>
+    </SameIndividual>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#Penalidade"/>
-        <NamedIndividual IRI="#Ação_penal"/>
-        <NamedIndividual IRI="#Jornal_inverso"/>
+        <ObjectProperty IRI="#Lei_Contra"/>
+        <NamedIndividual IRI="#AçãoPenal"/>
+        <NamedIndividual IRI="#JornalFake"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#Ação"/>
+        <ObjectProperty IRI="#Utiliza_Lei"/>
+        <NamedIndividual IRI="#AçãoPenal"/>
         <NamedIndividual IRI="#Difamação"/>
-        <NamedIndividual IRI="#Ação_penal"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#Acusação"/>
-        <NamedIndividual IRI="#Jornal_inverso"/>
+        <NamedIndividual IRI="#Difamação"/>
+        <NamedIndividual IRI="#JornalFake"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Acusação"/>
+        <NamedIndividual IRI="#JornalFake"/>
         <NamedIndividual IRI="#Difamação"/>
     </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Afetado"/>
+        <NamedIndividual IRI="#JornalFake"/>
+        <NamedIndividual IRI="#JornalReal"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Acusação"/>
+        <NamedIndividual IRI="#JornalReal"/>
+        <NamedIndividual IRI="#JornalFake"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Artigo"/>
+        <NamedIndividual IRI="#Difamação"/>
+        <Literal xml:lang="pt">###</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Penalidade"/>
+        <NamedIndividual IRI="#Difamação"/>
+        <Literal xml:lang="pt">Multa</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Vigência"/>
+        <NamedIndividual IRI="#Difamação"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#Acusação"/>
-        <Class IRI="#Executor"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#Acusação"/>
+            <Class IRI="#Vítima"/>
+        </ObjectSomeValuesFrom>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#Ação"/>
-        <Class IRI="#Penalidade"/>
+        <ObjectProperty IRI="#Afetado"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#Afetado"/>
+            <Class IRI="#Executor"/>
+        </ObjectSomeValuesFrom>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#Penalidade"/>
-        <Class IRI="#LeisAplicáveis"/>
+        <ObjectProperty IRI="#Lei_Contra"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#Lei_Contra"/>
+            <Class IRI="#LegislaçãoVigente"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Utiliza_Lei"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#Utiliza_Lei"/>
+            <Class IRI="#Julgador"/>
+        </ObjectSomeValuesFrom>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#Acusação"/>
-        <Class IRI="#LeisAplicáveis"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#Acusação"/>
+            <Class IRI="#Executor"/>
+        </ObjectSomeValuesFrom>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#Ação"/>
-        <Class IRI="#LeisAplicáveis"/>
+        <ObjectProperty IRI="#Afetado"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#Afetado"/>
+            <Class IRI="#Vítima"/>
+        </ObjectSomeValuesFrom>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#Penalidade"/>
-        <Class IRI="#Executor"/>
+        <ObjectProperty IRI="#Lei_Contra"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#Utiliza_Lei"/>
+            <Class IRI="#Executor"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Utiliza_Lei"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#Utiliza_Lei"/>
+            <Class IRI="#Executor"/>
+        </ObjectSomeValuesFrom>
     </ObjectPropertyRange>
 </Ontology>
 

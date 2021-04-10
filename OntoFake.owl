@@ -9,18 +9,14 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 Ontology(<http://www.semanticweb.org/bruno/ontologies/2021/2/OntoFake>
 Annotation(rdfs:comment "Esta ontologia tem como objetivo distinguir informações entre verdadeiras ou falsas, caracterizando-as em áreas que atuam."@pt)
 
-Declaration(Class(:Autor))
 Declaration(Class(:AutorCredibilizado))
 Declaration(Class(:Boatos))
 Declaration(Class(:Caluniar))
 Declaration(Class(:Capcioso))
 Declaration(Class(:ClickBait))
-Declaration(Class(:Data))
 Declaration(Class(:DataPublicaçãoReal))
 Declaration(Class(:Demagogia))
 Declaration(Class(:Descontextualizar))
-Declaration(Class(:FENAJ))
-Declaration(Class(:FIJ))
 Declaration(Class(:Fake))
 Declaration(Class(:Falsidade))
 Declaration(Class(:Fato))
@@ -29,76 +25,39 @@ Declaration(Class(:LesãoÀFéPública))
 Declaration(Class(:MidiáticaEnganosa))
 Declaration(Class(:Noticias))
 Declaration(Class(:Parórias))
-Declaration(Class(:Portal))
 Declaration(Class(:PortalComunicadorCredibilizado))
 Declaration(Class(:TeoriasNãoCientíficas))
-Declaration(Class(:Título))
 Declaration(Class(:TítuloReal))
-Declaration(ObjectProperty(:Autor))
-Declaration(ObjectProperty(:Data))
-Declaration(ObjectProperty(:Divulgador))
-Declaration(ObjectProperty(:Fake))
-Declaration(ObjectProperty(:Fato))
-Declaration(ObjectProperty(:Portal))
-Declaration(ObjectProperty(:Título))
-Declaration(NamedIndividual(:G1))
-Declaration(NamedIndividual(:Informação))
+Declaration(ObjectProperty(:É_Falso))
+Declaration(ObjectProperty(:É_Verdadeiro))
+Declaration(DataProperty(:AutorPublicação))
+Declaration(DataProperty(:DataPublicação))
+Declaration(DataProperty(:PortalPublicação))
 Declaration(NamedIndividual(:InformaçãoFalsa))
-Declaration(NamedIndividual(:PortalDuvidoso))
-Declaration(NamedIndividual(:TesteValidaçõesFalsas))
+Declaration(NamedIndividual(:InformaçãoReal))
+Declaration(NamedIndividual(:JornalFake))
+Declaration(NamedIndividual(:JornalFakeTeste))
+Declaration(NamedIndividual(:JornalReal))
+Declaration(NamedIndividual(:JornalRealTeste))
 
 ############################
 #   Object Properties
 ############################
 
-# Object Property: :Autor (:Autor)
+# Object Property: :É_Falso (:É_Falso)
 
-SubObjectPropertyOf(:Autor :Divulgador)
-ObjectPropertyDomain(:Autor :Informação)
-ObjectPropertyRange(:Autor :Autor)
+AnnotationAssertion(rdfs:comment :É_Falso "Definição do objeto afetado pela propriedade de domínio."@pt)
+AnnotationAssertion(rdfs:comment :É_Falso "Dominio da informação falsa"@pt)
+ObjectPropertyDomain(:É_Falso ObjectSomeValuesFrom(:É_Falso :Fake))
+ObjectPropertyRange(:É_Falso ObjectSomeValuesFrom(:É_Falso :Informação))
 
-# Object Property: :Data (:Data)
+# Object Property: :É_Verdadeiro (:É_Verdadeiro)
 
-SubObjectPropertyOf(:Data :Divulgador)
-ObjectPropertyDomain(:Data :Informação)
-ObjectPropertyRange(:Data :Data)
+AnnotationAssertion(rdfs:comment :É_Verdadeiro "Definição do objeto afetado pela propriedade de domínio."@pt)
+AnnotationAssertion(rdfs:comment :É_Verdadeiro "Dominio da informação real"@pt)
+ObjectPropertyDomain(:É_Verdadeiro ObjectSomeValuesFrom(:É_Verdadeiro :Fato))
+ObjectPropertyRange(:É_Verdadeiro ObjectSomeValuesFrom(:É_Verdadeiro :Informação))
 
-# Object Property: :Divulgador (:Divulgador)
-
-ObjectPropertyDomain(:Divulgador :Informação)
-ObjectPropertyRange(:Divulgador :Noticias)
-
-# Object Property: :Fake (:Fake)
-
-InverseObjectProperties(:Fake :Fato)
-ObjectPropertyDomain(:Fake :Fake)
-ObjectPropertyRange(:Fake :Boatos)
-ObjectPropertyRange(:Fake :Caluniar)
-ObjectPropertyRange(:Fake :Capcioso)
-ObjectPropertyRange(:Fake :LesãoÀFéPública)
-ObjectPropertyRange(:Fake :MidiáticaEnganosa)
-ObjectPropertyRange(:Fake :Parórias)
-ObjectPropertyRange(:Fake :TeoriasNãoCientíficas)
-
-# Object Property: :Fato (:Fato)
-
-ObjectPropertyDomain(:Fato :Fato)
-ObjectPropertyRange(:Fato :AutorCredibilizado)
-ObjectPropertyRange(:Fato :DataPublicaçãoReal)
-ObjectPropertyRange(:Fato :PortalComunicadorCredibilizado)
-ObjectPropertyRange(:Fato :TítuloReal)
-
-# Object Property: :Portal (:Portal)
-
-SubObjectPropertyOf(:Portal :Divulgador)
-ObjectPropertyDomain(:Portal :Informação)
-ObjectPropertyRange(:Portal :Portal)
-
-# Object Property: :Título (:Título)
-
-SubObjectPropertyOf(:Título :Divulgador)
-ObjectPropertyDomain(:Título :Informação)
-ObjectPropertyRange(:Título :Título)
 
 
 
@@ -106,99 +65,95 @@ ObjectPropertyRange(:Título :Título)
 #   Classes
 ############################
 
-# Class: :Autor (:Autor)
-
-SubClassOf(:Autor :Informação)
-
 # Class: :AutorCredibilizado (:AutorCredibilizado)
 
+AnnotationAssertion(rdfs:comment :AutorCredibilizado "Divulgador conhecido ou estabelecido em um portal reconhecido."@pt)
 SubClassOf(:AutorCredibilizado :Fato)
 
 # Class: :Boatos (:Boatos)
 
+AnnotationAssertion(rdfs:comment :Boatos "Divulgação de notícia sem fonte e/ou infundadas."@pt)
 SubClassOf(:Boatos :Descontextualizar)
 
 # Class: :Caluniar (:Caluniar)
 
+AnnotationAssertion(rdfs:comment :Caluniar "Atribuir falsamente, mentiras contra alguém."@pt)
 SubClassOf(:Caluniar :Descontextualizar)
 
 # Class: :Capcioso (:Capcioso)
 
+AnnotationAssertion(rdfs:comment :Capcioso "Ato de \"se passar\" por outro, ação de confundir e enganar."@pt)
 SubClassOf(:Capcioso :Demagogia)
 
 # Class: :ClickBait (:ClickBait)
 
+AnnotationAssertion(rdfs:comment :ClickBait "Títulos sensacionalistas para gerar mais cliques no conteúdo."@pt)
 SubClassOf(:ClickBait :Falsidade)
-
-# Class: :Data (:Data)
-
-SubClassOf(:Data :Informação)
 
 # Class: :DataPublicaçãoReal (:DataPublicaçãoReal)
 
+AnnotationAssertion(rdfs:comment :DataPublicaçãoReal "Informação para validação"@pt)
 SubClassOf(:DataPublicaçãoReal :Fato)
 
 # Class: :Demagogia (:Demagogia)
 
+AnnotationAssertion(rdfs:comment :Demagogia "Relações de controle popular"@pt)
 SubClassOf(:Demagogia :Fake)
 
 # Class: :Descontextualizar (:Descontextualizar)
 
+AnnotationAssertion(rdfs:comment :Descontextualizar "Informações que foram tiradas de seu contexto real"@pt)
 SubClassOf(:Descontextualizar :Fake)
-
-# Class: :FENAJ (:FENAJ)
-
-AnnotationAssertion(rdfs:comment :FENAJ "Federação Nacional dos Jornalistas")
-SubClassOf(:FENAJ :AutorCredibilizado)
-
-# Class: :FIJ (:FIJ)
-
-AnnotationAssertion(rdfs:comment :FIJ "Federação Internacional dos Jornalistas")
-SubClassOf(:FIJ :AutorCredibilizado)
 
 # Class: :Fake (:Fake)
 
+AnnotationAssertion(rdfs:comment :Fake "Aqui temos divididas as categorias de informações falsas."@pt)
 SubClassOf(:Fake :Noticias)
 DisjointClasses(:Fake :Fato)
 
 # Class: :Falsidade (:Falsidade)
 
+AnnotationAssertion(rdfs:comment :Falsidade "Aquilo que tende a enganar."@pt)
 SubClassOf(:Falsidade :Fake)
 
 # Class: :Fato (:Fato)
 
+AnnotationAssertion(rdfs:comment :Fato "Aqui temos categorias de comprovação para informações."@pt)
 SubClassOf(:Fato :Noticias)
+
+# Class: :Informação (:Informação)
+
+AnnotationAssertion(rdfs:comment :Informação "Composta por título, texto, data, autor e portal publicador."@pt)
+SubClassOf(:Informação :Noticias)
 
 # Class: :LesãoÀFéPública (:LesãoÀFéPública)
 
+AnnotationAssertion(rdfs:comment :LesãoÀFéPública "Fraudes, encontradas em \"uso de documento falso\", moeda falsa, entre outros."@pt)
 SubClassOf(:LesãoÀFéPública :Demagogia)
 
 # Class: :MidiáticaEnganosa (:MidiáticaEnganosa)
 
+AnnotationAssertion(rdfs:comment :MidiáticaEnganosa "Mídias que costumam divulgar informações falsas."@pt)
 SubClassOf(:MidiáticaEnganosa :Falsidade)
 
 # Class: :Parórias (:Parórias)
 
+AnnotationAssertion(rdfs:comment :Parórias "Recriação de um texto."@pt)
 SubClassOf(:Parórias :Descontextualizar)
-
-# Class: :Portal (:Portal)
-
-SubClassOf(:Portal :Informação)
 
 # Class: :PortalComunicadorCredibilizado (:PortalComunicadorCredibilizado)
 
+AnnotationAssertion(rdfs:comment :PortalComunicadorCredibilizado "Portais que transmitem informação de forma real, sem qualquer tentativa de induzir ou enganar o leitor."@pt)
 SubClassOf(:PortalComunicadorCredibilizado :Fato)
 
 # Class: :TeoriasNãoCientíficas (:TeoriasNãoCientíficas)
 
+AnnotationAssertion(rdfs:comment :TeoriasNãoCientíficas "Informações sem embasamento ou frutos de crenças sem comprovação cientifica."@pt)
 SubClassOf(:TeoriasNãoCientíficas :Falsidade)
-
-# Class: :Título (:Título)
-
-SubClassOf(:Título :Informação)
 
 # Class: :TítuloReal (:TítuloReal)
 
+AnnotationAssertion(rdfs:comment :TítuloReal "Título dado a informação."@pt)
 SubClassOf(:TítuloReal :Fato)
 
 
@@ -206,29 +161,43 @@ SubClassOf(:TítuloReal :Fato)
 #   Named Individuals
 ############################
 
-# Individual: :G1 (:G1)
-
-ClassAssertion(:PortalComunicadorCredibilizado :G1)
-ObjectPropertyAssertion(:Portal :G1 :Informação)
-
-# Individual: :Informação (:Informação)
-
-ClassAssertion(:Fato :Informação)
-
 # Individual: :InformaçãoFalsa (:InformaçãoFalsa)
 
+AnnotationAssertion(rdfs:comment :InformaçãoFalsa "Formatação da informação falsa")
 ClassAssertion(:Fake :InformaçãoFalsa)
+ObjectPropertyAssertion(:É_Falso :InformaçãoFalsa :JornalFake)
+DataPropertyAssertion(:AutorPublicação :InformaçãoFalsa "Autor desconhecido ou informado falsamente.")
+DataPropertyAssertion(:DataPublicação :InformaçãoFalsa "Data não condizente com qualquer informação real sobre o caso já estabelecida.")
+DataPropertyAssertion(:PortalPublicação :InformaçãoFalsa "Portal desconhecido, criado recentemente ou já categorizado como divulgador de notícias falsas.")
 
-# Individual: :PortalDuvidoso (:PortalDuvidoso)
+# Individual: :InformaçãoReal (:InformaçãoReal)
 
-ClassAssertion(:MidiáticaEnganosa :PortalDuvidoso)
-ObjectPropertyAssertion(:Portal :PortalDuvidoso :InformaçãoFalsa)
+AnnotationAssertion(rdfs:comment :InformaçãoReal "Formatação da informação real")
+ClassAssertion(:Fato :InformaçãoReal)
+ObjectPropertyAssertion(:É_Verdadeiro :InformaçãoReal :JornalReal)
+DataPropertyAssertion(:AutorPublicação :InformaçãoReal "Autor já conhecido por trabalhos reais, com conhecimento para buscar e estabalecer informações reais.")
+DataPropertyAssertion(:DataPublicação :InformaçãoReal "Data condizente com fatos do ocorrido na informação.")
+DataPropertyAssertion(:PortalPublicação :InformaçãoReal "Portal próprio do autor ou rede de comunicação conhecida e estabelecida como divulgadora de informações reais.")
 
-# Individual: :TesteValidaçõesFalsas (:TesteValidaçõesFalsas)
+# Individual: :JornalFake (:JornalFake)
 
-ClassAssertion(:MidiáticaEnganosa :TesteValidaçõesFalsas)
-ClassAssertion(:Parórias :TesteValidaçõesFalsas)
-ObjectPropertyAssertion(:Portal :TesteValidaçõesFalsas :InformaçãoFalsa)
+AnnotationAssertion(rdfs:comment :JornalFake "Informação falsa pré estabelecida"@pt)
+ClassAssertion(:Informação :JornalFake)
+SameIndividual(:JornalFake :JornalFakeTeste)
+
+# Individual: :JornalFakeTeste (:JornalFakeTeste)
+
+AnnotationAssertion(rdfs:comment :JornalFakeTeste "Semelhante a informação falsa pré estabelecida."@pt)
+
+# Individual: :JornalReal (:JornalReal)
+
+AnnotationAssertion(rdfs:comment :JornalReal "Informação real pré estabelecida."@pt)
+ClassAssertion(:Informação :JornalReal)
+SameIndividual(:JornalReal :JornalRealTeste)
+
+# Individual: :JornalRealTeste (:JornalRealTeste)
+
+AnnotationAssertion(rdfs:comment :JornalRealTeste "Semelhante a informação real pré estabelecida."@pt)
 
 
 )

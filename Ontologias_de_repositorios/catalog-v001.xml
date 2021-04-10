@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1617987013381" name="http://purl.org/net/rr/RelativeRelationshipPattern" uri="Reclamação.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1617987013381" name="http://raw.githubusercontent.com/Rel-incode/cop/master/cop.owl" uri="ontology.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1617987013381" name="http://www.semanticweb.org/bruno/ontologies/2021/2/untitled-ontology-8" uri="Testes_OntologiaEscola.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1617987013381" name="duplicate:http://www.semanticweb.org/bruno/ontologies/2021/3/Anime" uri="OntoAnime.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1617987013381" name="duplicate:http://www.semanticweb.org/bruno/ontologies/2021/3/Anime" uri="Teste_OntologiaAnime.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1617987013381" name="http://www.semanticweb.org/bruno/ontologies/2021/3/OntoJuris" uri="OntoJuris.owl"/>
+    </group>
+</catalog>

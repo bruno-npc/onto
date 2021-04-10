@@ -1,0 +1,216 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/bruno/ontologies/2021/3/Anime"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/bruno/ontologies/2021/3/Anime">
+    <Prefix name="" IRI="http://www.semanticweb.org/bruno/ontologies/2021/3/untitled-ontology-16#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Anime"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Apresentar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Estudio"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Gênero"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Series"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Produtor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#É_Gênero"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#AnoLançamento"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Nome"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AnimeDrama"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AnimeFantasia"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AnimeTerror"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Drama"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EstudioDrama"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EstudioFantasia"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EstudioTerror"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Fantasia"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NovoAnimeTerror"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Terror"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Anime"/>
+        <Class IRI="#Apresentar"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Estudio"/>
+        <Class IRI="#Anime"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Gênero"/>
+        <Class IRI="#Anime"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Series"/>
+        <Class IRI="#Anime"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Anime"/>
+        <NamedIndividual IRI="#AnimeDrama"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Anime"/>
+        <NamedIndividual IRI="#AnimeFantasia"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Anime"/>
+        <NamedIndividual IRI="#AnimeTerror"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Gênero"/>
+        <NamedIndividual IRI="#Drama"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Estudio"/>
+        <NamedIndividual IRI="#EstudioDrama"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Estudio"/>
+        <NamedIndividual IRI="#EstudioFantasia"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Estudio"/>
+        <NamedIndividual IRI="#EstudioTerror"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Gênero"/>
+        <NamedIndividual IRI="#Fantasia"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Gênero"/>
+        <NamedIndividual IRI="#Terror"/>
+    </ClassAssertion>
+    <SameIndividual>
+        <NamedIndividual IRI="#AnimeTerror"/>
+        <NamedIndividual IRI="#NovoAnimeTerror"/>
+    </SameIndividual>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Produtor"/>
+        <NamedIndividual IRI="#AnimeDrama"/>
+        <NamedIndividual IRI="#EstudioDrama"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#É_Gênero"/>
+        <NamedIndividual IRI="#AnimeDrama"/>
+        <NamedIndividual IRI="#Drama"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Produtor"/>
+        <NamedIndividual IRI="#AnimeFantasia"/>
+        <NamedIndividual IRI="#EstudioFantasia"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Produtor"/>
+        <NamedIndividual IRI="#AnimeTerror"/>
+        <NamedIndividual IRI="#EstudioTerror"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#É_Gênero"/>
+        <NamedIndividual IRI="#AnimeTerror"/>
+        <NamedIndividual IRI="#Terror"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#AnoLançamento"/>
+        <NamedIndividual IRI="#AnimeDrama"/>
+        <Literal xml:lang="pt">2021</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nome"/>
+        <NamedIndividual IRI="#AnimeDrama"/>
+        <Literal xml:lang="pt">AnimeDeDrama</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#AnoLançamento"/>
+        <NamedIndividual IRI="#AnimeFantasia"/>
+        <Literal xml:lang="pt">2020</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nome"/>
+        <NamedIndividual IRI="#AnimeFantasia"/>
+        <Literal xml:lang="pt">AnimeDeFantasia</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#AnoLançamento"/>
+        <NamedIndividual IRI="#AnimeTerror"/>
+        <Literal xml:lang="pt">2020</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nome"/>
+        <NamedIndividual IRI="#AnimeTerror"/>
+        <Literal xml:lang="pt">AnimeDeTerror</Literal>
+    </DataPropertyAssertion>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Produtor"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#Produtor"/>
+            <Class IRI="#Estudio"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#É_Gênero"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#É_Gênero"/>
+            <Class IRI="#Gênero"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Produtor"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#Produtor"/>
+            <Class IRI="#Gênero"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#É_Gênero"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#É_Gênero"/>
+            <Class IRI="#Series"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
